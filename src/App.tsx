@@ -8,6 +8,9 @@ function App() {
 
   return (
     <>
+      <header>
+        <img src={logo} alt="logo" className="logo" />
+      </header>
       <main>
         {data?.map((char: { name: string; nation: string; vision: string }) => (
           <div className="char">

@@ -1,4 +1,7 @@
 body {
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%221920%22%20height%3D%221080%22%20viewBox%3D%220%200%201920%201080%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cg%20clip-path%3D%22url(%23clip0_27_505)%22%3E%0A%3Crect%20width%3D%221920%22%20height%3D%221080%22%20fill%3D%22%23546592%22%2F%3E%0A%3Ccircle%20cx%3D%221389.01%22%20cy%3D%2224.5%22%20r%3D%22145.5%22%20fill%3D%22%232F365F%22%2F%3E%0A%3Ccircle%20cx%3D%221389%22%20cy%3D%2224%22%20r%3D%22175.5%22%20stroke%3D%22%23F7F1ED%22%20stroke-width%3D%223%22%2F%3E%0A%3Ccircle%20cx%3D%221656%22%20cy%3D%221021%22%20r%3D%22198%22%20stroke%3D%22%232F365F%22%20stroke-width%3D%224%22%2F%3E%0A%3Ccircle%20cy%3D%2224%22%20r%3D%22198%22%20stroke%3D%22%232F365F%22%20stroke-width%3D%224%22%2F%3E%0A%3Ccircle%20cx%3D%22670.5%22%20cy%3D%22369.5%22%20r%3D%22145.5%22%20fill%3D%22%232F365F%22%2F%3E%0A%3Ccircle%20cx%3D%22176.5%22%20cy%3D%22784.5%22%20r%3D%22145.5%22%20fill%3D%22%23FEBEB0%22%2F%3E%0A%3Ccircle%20cx%3D%22145%22%20cy%3D%221021%22%20r%3D%22175.5%22%20stroke%3D%22%23F7F1ED%22%20stroke-width%3D%223%22%2F%3E%0A%3Ccircle%20cx%3D%221098.5%22%20cy%3D%221079.5%22%20r%3D%22145.5%22%20fill%3D%22%23FEBEB0%22%2F%3E%0A%3C%2Fg%3E%0A%3Cdefs%3E%0A%3CclipPath%20id%3D%22clip0_27_505%22%3E%0A%3Crect%20width%3D%221920%22%20height%3D%221080%22%20fill%3D%22white%22%2F%3E%0A%3C%2FclipPath%3E%0A%3C%2Fdefs%3E%0A%3C%2Fsvg%3E%0A");
+  background-repeat: inherit;
+  background-size: initial;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -12,9 +15,14 @@ code {
     monospace;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+}
+
 .char {
   float: left;
-  padding: 20px;
+  padding: 20px 20px 0 20px;
   border: 2px solid black;
   margin: 30px;
 }
