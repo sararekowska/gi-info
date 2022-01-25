@@ -20,7 +20,7 @@ header {
   justify-content: center;
 }
 
-.char {
+.list {
   float: left;
   padding: 20px 20px 0 20px;
   border: 2px solid black;
@@ -28,6 +28,59 @@ header {
 }
 
 .char-img {
-  height: 220;
-  width: 200;
+  height: 220px;
+  width: 210px;
+}
+
+.weapon-img {
+  height: 120px;
+  width: 110px;
+}
+
+.home-p {
+  width: 8em;
+  height: 4.4em;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 75px;
+  letter-spacing: 0.045em;
+  color: #f7f1ed;
+}
+
+.char-btn {
+  margin-right: 2em;
+  margin-bottom: 2em;
+  width: 10em;
+  height: 3em;
+  background: #2f365f;
+  border-radius: 8px;
+  border: none;
+}
+
+.char-btn:hover {
+  background: #1f2546;
+}
+
+.weapon-btn {
+  width: 10em;
+  height: 3em;
+  background: transparent;
+  border: 4px solid #2f365f;
+  border-radius: 8px;
+}
+
+.weapon-btn:hover {
+  border: 4px solid #1f2546;
+}
+
+button {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.045em;
+  color: #f7f1ed;
 }

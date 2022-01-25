@@ -1,19 +1,14 @@
-import "./App.css";
-import { useListCharacters } from "./hooks/useListCharacters";
-import logo from "./logo.png";
+import { useListCharacters } from "../hooks/useListCharacters";
 
-function App() {
+function CharList() {
   const { data } = useListCharacters();
   console.log(data);
 
   return (
     <>
-      <header>
-        <img src={logo} alt="logo" className="logo" />
-      </header>
       <main>
         {data?.map((char: { name: string; nation: string; vision: string }) => (
-          <div className="char">
+          <div className="list">
             Name: {char.name}
             <br />
             Nation: {char.nation}
@@ -43,4 +38,4 @@ function App() {
   );
 }
 
-export default App;
+export default CharList;
