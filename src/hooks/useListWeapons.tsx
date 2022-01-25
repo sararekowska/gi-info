@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
 
-type Weapon = {
+export type Weapon = {
   name: string;
   type: string;
   baseAttack: number;

@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
 
-type Character = {
+export type Character = {
   name: string;
   nation: string;
   vision: string;

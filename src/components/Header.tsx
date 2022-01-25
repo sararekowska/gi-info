@@ -1,6 +1,6 @@
 import logo from "../logo.png";
 
-function Header() {
+const Header = () => {
   return (
     <>
       <header>
@@ -8,6 +8,6 @@ function Header() {
       </header>
     </>
   );
-}
+};
 
 export default Header;

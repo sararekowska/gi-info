@@ -1,9 +1,36 @@
 import { useState } from "react";
-import { useListWeapons } from "../hooks/useListWeapons";
+import { useListWeapons, Weapon } from "../hooks/useListWeapons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
-function WeaponList() {
+export const icon = <FontAwesomeIcon icon={faTimesCircle} />;
+
+const WeaponImage = ({ weapon }: { weapon: Weapon }) => {
+  const [error, setError] = useState<Boolean>();
+
+  return !error ? (
+    <img
+      src={
+        "https://api.genshin.dev/weapons/" +
+        weapon.name
+          .toLowerCase()
+          .replace(" ", "-")
+          .replace("'", "-")
+          .replaceAll(" ", "-")
+          .replace("--", "-") +
+        "/icon"
+      }
+      onError={() => setError(true)}
+      className="weapon-img"
+    ></img>
+  ) : (
+    icon
+  );
+};
+
+const WeaponList = () => {
   const { data } = useListWeapons();
-  console.log(data);
+  // console.log(data);
 
   const [type, setType] = useState<string>();
 
@@ -16,6 +43,10 @@ function WeaponList() {
           </button>
         ))}
 
+        <button className="vision-type" onClick={() => setType("")}>
+          ALL
+        </button>
+
         {data
           ?.filter((weapon) => !type || weapon.type === type)
           .map((weapon) => (
@@ -26,25 +57,12 @@ function WeaponList() {
               <br />
               Base Attack: {weapon.baseAttack}
               <br />
-              <img
-                src={
-                  "https://api.genshin.dev/weapons/" +
-                  weapon.name
-                    .toLowerCase()
-                    .replace(" ", "-")
-                    .replace("'", "-")
-                    .replaceAll(" ", "-")
-                    .replace("--", "-") +
-                  "/icon"
-                }
-                alt="no icon availabe for this weapon"
-                className="weapon-img"
-              ></img>
+              <WeaponImage weapon={weapon} />
             </div>
           ))}
       </main>
     </>
   );
-}
+};
 
 export default WeaponList;

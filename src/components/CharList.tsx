@@ -1,9 +1,35 @@
 import { useState } from "react";
-import { useListCharacters } from "../hooks/useListCharacters";
+import { Character, useListCharacters } from "../hooks/useListCharacters";
+import { icon } from "./WeaponList";
 
-function CharList() {
+const CharImage = ({ char }: { char: Character }) => {
+  const [error, setError] = useState<Boolean>();
+
+  return !error ? (
+    <img
+      src={
+        "https://api.genshin.dev/characters/" +
+        char.name
+          .toLowerCase()
+          .replace(" ", "-")
+          .replace("sangonomiya-", "")
+          .replace("kamisato-", "")
+          .replace("kaedehara-", "")
+          .replace("-shogun", "")
+          .replace("kujou-", "") +
+        "/icon-big"
+      }
+      onError={() => setError(true)}
+      className="char-img"
+    ></img>
+  ) : (
+    icon
+  );
+};
+
+const CharList = () => {
   const { data } = useListCharacters();
-  console.log(data);
+  // console.log(data);
 
   const [element, setElement] = useState<string>();
 
@@ -16,6 +42,10 @@ function CharList() {
           </button>
         ))}
 
+        <button className="vision-type" onClick={() => setElement("")}>
+          ALL
+        </button>
+
         {data
           ?.filter((char) => !element || char.vision_key === element)
           .map((char) => (
@@ -26,27 +56,12 @@ function CharList() {
               <br />
               Vision: {char.vision}
               <br />
-              <img
-                src={
-                  "https://api.genshin.dev/characters/" +
-                  char.name
-                    .toLowerCase()
-                    .replace(" ", "-")
-                    .replace("sangonomiya-", "")
-                    .replace("kamisato-", "")
-                    .replace("kaedehara-", "")
-                    .replace("-shogun", "")
-                    .replace("kujou-", "") +
-                  "/icon-big"
-                }
-                alt="no icon availabe for this character"
-                className="char-img"
-              ></img>
+              <CharImage char={char} />
             </div>
           ))}
       </main>
     </>
   );
-}
+};
 
 export default CharList;

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function ErrorPage() {
+const ErrorPage = () => {
   return (
     <>
       <p className="home-p">
@@ -13,6 +13,6 @@ function ErrorPage() {
       </Link>
     </>
   );
-}
+};
 
 export default ErrorPage;

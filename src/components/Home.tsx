@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function HomePage() {
+const HomePage = () => {
   return (
     <>
       <p className="home-p">
@@ -20,6 +20,6 @@ function HomePage() {
       </Link>
     </>
   );
-}
+};
 
 export default HomePage;
