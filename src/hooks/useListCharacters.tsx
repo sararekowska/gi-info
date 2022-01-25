@@ -1,7 +1,14 @@
 import { useQuery } from "react-query";
 
+type Character = {
+  name: string;
+  nation: string;
+  vision: string;
+  vision_key: string;
+};
+
 export const useListCharacters = () => {
-  const query = useQuery("characters", async () => {
+  const query = useQuery<Character[]>("characters", async () => {
     const res = await fetch("https://api.genshin.dev/characters/all");
     return res.json();
   });
