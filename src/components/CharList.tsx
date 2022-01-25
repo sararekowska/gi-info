@@ -11,7 +11,7 @@ function CharList() {
     <>
       <main>
         {["PYRO", "ELECTRO", "ANEMO", "CRYO", "HYDRO", "GEO"].map((el) => (
-          <button className="vision" onClick={() => setElement(el)}>
+          <button className="vision-type" onClick={() => setElement(el)}>
             {el.toLowerCase()}
           </button>
         ))}
