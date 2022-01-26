@@ -37,29 +37,29 @@ const WeaponList = () => {
   return (
     <>
       <main>
-        {["Catalyst", "Bow", "Sword", "Polearm", "Claymore"].map((type) => (
-          <button className="vision-type" onClick={() => setType(type)}>
-            {type.toLowerCase()}
-          </button>
-        ))}
-
-        <button className="vision-type" onClick={() => setType("")}>
-          ALL
-        </button>
-
-        {data
-          ?.filter((weapon) => !type || weapon.type === type)
-          .map((weapon) => (
-            <div className="list">
-              Name: {weapon.name}
-              <br />
-              Type: {weapon.type}
-              <br />
-              Base Attack: {weapon.baseAttack}
-              <br />
-              <WeaponImage weapon={weapon} />
-            </div>
+        <div className="buttons">
+          {["Catalyst", "Bow", "Sword", "Polearm", "Claymore"].map((type) => (
+            <button onClick={() => setType(type)}>{type.toLowerCase()}</button>
           ))}
+
+          <button onClick={() => setType("")}>ALL</button>
+        </div>
+
+        <div className="content-list">
+          {data
+            ?.filter((weapon) => !type || weapon.type === type)
+            .map((weapon) => (
+              <div className="list-item-weapon">
+                Name: {weapon.name}
+                <br />
+                Type: {weapon.type}
+                <br />
+                Base Attack: {weapon.baseAttack}
+                <br />
+                <WeaponImage weapon={weapon} />
+              </div>
+            ))}
+        </div>
       </main>
     </>
   );

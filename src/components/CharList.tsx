@@ -29,36 +29,36 @@ const CharImage = ({ char }: { char: Character }) => {
 
 const CharList = () => {
   const { data } = useListCharacters();
-  // console.log(data);
+  console.log(data);
 
   const [element, setElement] = useState<string>();
 
   return (
     <>
       <main>
-        {["PYRO", "ELECTRO", "ANEMO", "CRYO", "HYDRO", "GEO"].map((el) => (
-          <button className="vision-type" onClick={() => setElement(el)}>
-            {el.toLowerCase()}
-          </button>
-        ))}
-
-        <button className="vision-type" onClick={() => setElement("")}>
-          ALL
-        </button>
-
-        {data
-          ?.filter((char) => !element || char.vision_key === element)
-          .map((char) => (
-            <div className="list">
-              Name: {char.name}
-              <br />
-              Nation: {char.nation}
-              <br />
-              Vision: {char.vision}
-              <br />
-              <CharImage char={char} />
-            </div>
+        <div className="buttons">
+          {["PYRO", "ELECTRO", "ANEMO", "CRYO", "HYDRO", "GEO"].map((el) => (
+            <button onClick={() => setElement(el)}>{el.toLowerCase()}</button>
           ))}
+
+          <button onClick={() => setElement("")}>CLEAR</button>
+        </div>
+
+        <div className="content-list">
+          {data
+            ?.filter((char) => !element || char.vision_key === element)
+            .map((char) => (
+              <div className="list-item">
+                Name: {char.name}
+                <br />
+                Nation: {char.nation}
+                <br />
+                Vision: {char.vision}
+                <br />
+                <CharImage char={char} />
+              </div>
+            ))}
+        </div>
       </main>
     </>
   );
