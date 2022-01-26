@@ -4,7 +4,6 @@ export type Character = {
   name: string;
   nation: string;
   vision: string;
-  vision_key: string;
 };
 
 export const useListCharacters = () => {

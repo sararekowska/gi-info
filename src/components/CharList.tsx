@@ -37,8 +37,8 @@ const CharList = () => {
     <>
       <main>
         <div className="buttons">
-          {["PYRO", "ELECTRO", "ANEMO", "CRYO", "HYDRO", "GEO"].map((el) => (
-            <button onClick={() => setElement(el)}>{el.toLowerCase()}</button>
+          {["Pyro", "Electro", "Anemo", "Cryo", "Hydro", "Geo"].map((el) => (
+            <button onClick={() => setElement(el)}>{el}</button>
           ))}
 
           <button onClick={() => setElement("")}>CLEAR</button>
@@ -46,14 +46,10 @@ const CharList = () => {
 
         <div className="content-list">
           {data
-            ?.filter((char) => !element || char.vision_key === element)
+            ?.filter((char) => !element || char.vision === element)
             .map((char) => (
               <div className="list-item">
-                Name: {char.name}
-                <br />
-                Nation: {char.nation}
-                <br />
-                Vision: {char.vision}
+                <p>{char.name}</p>
                 <br />
                 <CharImage char={char} />
               </div>

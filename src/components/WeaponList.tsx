@@ -39,7 +39,7 @@ const WeaponList = () => {
       <main>
         <div className="buttons">
           {["Catalyst", "Bow", "Sword", "Polearm", "Claymore"].map((type) => (
-            <button onClick={() => setType(type)}>{type.toLowerCase()}</button>
+            <button onClick={() => setType(type)}>{type}</button>
           ))}
 
           <button onClick={() => setType("")}>ALL</button>
@@ -50,11 +50,7 @@ const WeaponList = () => {
             ?.filter((weapon) => !type || weapon.type === type)
             .map((weapon) => (
               <div className="list-item-weapon">
-                Name: {weapon.name}
-                <br />
-                Type: {weapon.type}
-                <br />
-                Base Attack: {weapon.baseAttack}
+                <p>{weapon.name}</p>
                 <br />
                 <WeaponImage weapon={weapon} />
               </div>
