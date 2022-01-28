@@ -10,6 +10,10 @@ import WeaponList from "./components/WeaponList/WeaponList";
 import ErrorPage from "./components/Error/Error";
 import WeaponPage from "./components/WeaponPage/WeaponPage";
 import CharPage from "./components/CharPage/CharPage";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+
+library.add(fas);
 
 const queryClient = new QueryClient();
 

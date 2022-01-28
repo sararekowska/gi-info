@@ -1,17 +1,10 @@
 import { useState } from "react";
 import { useListWeapons } from "../../common/hooks/useListWeapons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faTimesCircle,
-  faArrowCircleLeft,
-} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import commonstyles from "../../common/Styles.module.scss";
 import styles from "./WeaponList.module.scss";
 import { Weapon } from "../../common/Types";
-
-export const ErrorIcon = <FontAwesomeIcon icon={faTimesCircle} />;
-export const BackIcon = <FontAwesomeIcon icon={faArrowCircleLeft} />;
 
 const WeaponImage = ({ weapon }: { weapon: Weapon }) => {
   const [error, setError] = useState<Boolean>();
@@ -32,7 +25,7 @@ const WeaponImage = ({ weapon }: { weapon: Weapon }) => {
       className={styles["weapon-img"]}
     ></img>
   ) : (
-    ErrorIcon
+    <FontAwesomeIcon icon={["fas", "times-circle"]} />
   );
 };
 
@@ -43,6 +36,14 @@ const WeaponList = () => {
 
   return (
     <>
+      <Link to="/">
+        <FontAwesomeIcon
+          icon={["fas", "arrow-circle-left"]}
+          color="white"
+          size="5x"
+          className={commonstyles["back-icon"]}
+        />
+      </Link>
       <main>
         <div className={commonstyles["select-btn"]}>
           {["Catalyst", "Bow", "Sword", "Polearm", "Claymore"].map((type) => (

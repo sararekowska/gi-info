@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useListCharacters } from "../../common/hooks/useListCharacters";
-import { ErrorIcon } from "../WeaponList/WeaponList";
 import { Link } from "react-router-dom";
 import commonstyles from "../../common/Styles.module.scss";
 import styles from "./CharList.module.scss";
 import { Character } from "../../common/Types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const CharImage = ({ char }: { char: Character }) => {
   const [error, setError] = useState<Boolean>();
@@ -27,7 +27,7 @@ const CharImage = ({ char }: { char: Character }) => {
       className={styles["char-img"]}
     ></img>
   ) : (
-    ErrorIcon
+    <FontAwesomeIcon icon={["fas", "times-circle"]} />
   );
 };
 
@@ -37,6 +37,14 @@ const CharList = () => {
 
   return (
     <>
+      <Link to="/">
+        <FontAwesomeIcon
+          icon={["fas", "arrow-circle-left"]}
+          color="white"
+          size="5x"
+          className={commonstyles["back-icon"]}
+        />
+      </Link>
       <main>
         <div className={commonstyles["select-btn"]}>
           {["Pyro", "Electro", "Anemo", "Cryo", "Hydro", "Geo"].map((el) => (
