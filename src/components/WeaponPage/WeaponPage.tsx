@@ -1,7 +1,11 @@
+import { useParams } from "react-router-dom";
+
 const WeaponPage = () => {
+  const { name } = useParams<{ name?: string }>();
+
   return (
     <>
-      <div>test</div>
+      <div>{name}</div>
     </>
   );
 };

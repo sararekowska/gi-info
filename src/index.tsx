@@ -2,7 +2,7 @@ import "./index.scss";
 import React from "react";
 import ReactDOM from "react-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import CharList from "./components/CharList/CharList";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
@@ -18,12 +18,14 @@ ReactDOM.render(
     <QueryClientProvider client={queryClient}>
       <Header />
       <BrowserRouter>
-        <Route path="/" component={Home} exact />
-        <Route path="/error" component={ErrorPage} />
-        <Route path="/char-list" component={CharList} />
-        <Route path="/weapon-list" component={WeaponList} />
-        <Route path="/weapon/" component={WeaponPage} />
-        <Route path="/character/" component={CharPage} />
+        <Switch>
+          <Route path="/" component={Home} exact />
+          <Route path="/char-list" component={CharList} />
+          <Route path="/weapon-list" component={WeaponList} />
+          <Route path="/weapon/:name" component={WeaponPage} />
+          <Route path="/character/:name" component={CharPage} />
+          <Route path="*" component={ErrorPage} />
+        </Switch>
       </BrowserRouter>
     </QueryClientProvider>
   </React.StrictMode>,
