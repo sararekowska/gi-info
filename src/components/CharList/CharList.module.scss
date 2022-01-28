@@ -1,0 +1,26 @@
+.list-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 20px 0 20px;
+  border: 2px solid #111;
+  border-radius: 8px;
+  margin: 30px;
+  width: 14em;
+  height: 18.7em;
+  background-color: #febfb0;
+
+  p {
+    font-weight: bold;
+    text-align: center;
+    border-radius: 2px;
+  }
+}
+
+.list-item:hover {
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+.char-img {
+  height: 14.08em;
+}

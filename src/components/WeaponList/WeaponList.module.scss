@@ -1,0 +1,27 @@
+.weapon-img {
+  height: 120px;
+  width: 110px;
+}
+
+.list-item-weapon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px 20px 0 20px;
+  border: 2px solid #111;
+  border-radius: 8px;
+  margin: 30px;
+  width: 14em;
+  height: 7.5em;
+  background-color: #febfb0;
+  display: flex;
+
+  p {
+    font-weight: bold;
+    margin: 1em;
+  }
+}
+
+.list-item-weapon:hover {
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+}

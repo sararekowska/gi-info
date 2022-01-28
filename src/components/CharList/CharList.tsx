@@ -1,6 +1,9 @@
 import { useState } from "react";
-import { Character, useListCharacters } from "../hooks/useListCharacters";
-import { icon } from "./WeaponList";
+import { Character, useListCharacters } from "../../hooks/useListCharacters";
+import { icon } from "../WeaponList/WeaponList";
+import { Link } from "react-router-dom";
+import commonstyles from "../../common/Styles.module.scss";
+import styles from "./CharList.module.scss";
 
 const CharImage = ({ char }: { char: Character }) => {
   const [error, setError] = useState<Boolean>();
@@ -20,7 +23,7 @@ const CharImage = ({ char }: { char: Character }) => {
         "/icon-big"
       }
       onError={() => setError(true)}
-      className="char-img"
+      className={styles["char-img"]}
     ></img>
   ) : (
     icon
@@ -36,7 +39,7 @@ const CharList = () => {
   return (
     <>
       <main>
-        <div className="select-btn">
+        <div className={commonstyles["select-btn"]}>
           {["Pyro", "Electro", "Anemo", "Cryo", "Hydro", "Geo"].map((el) => (
             <button onClick={() => setElement(el)}>{el}</button>
           ))}
@@ -44,15 +47,17 @@ const CharList = () => {
           <button onClick={() => setElement("")}>CLEAR</button>
         </div>
 
-        <div className="content-list">
+        <div className={commonstyles["content-list"]}>
           {data
             ?.filter((char) => !element || char.vision === element)
             .map((char) => (
-              <div className="list-item">
-                <p>{char.name}</p>
-                <br />
-                <CharImage char={char} />
-              </div>
+              <Link to={"/character/" + char.name}>
+                <div className={styles["list-item"]}>
+                  <p>{char.name}</p>
+                  <br />
+                  <CharImage char={char} />
+                </div>
+              </Link>
             ))}
         </div>
       </main>
