@@ -1,10 +1,5 @@
 import { useQuery } from "react-query";
-
-export type Character = {
-  name: string;
-  nation: string;
-  vision: string;
-};
+import { Character } from "../Types";
 
 export const useListCharacters = () => {
   const query = useQuery<Character[]>("characters", async () => {

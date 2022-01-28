@@ -1,10 +1,5 @@
 import { useQuery } from "react-query";
-
-export type Weapon = {
-  name: string;
-  type: string;
-  baseAttack: number;
-};
+import { Weapon } from "../Types";
 
 export const useListWeapons = () => {
   const query = useQuery<Weapon[]>("weapon", async () => {

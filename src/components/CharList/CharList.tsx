@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Character, useListCharacters } from "../../hooks/useListCharacters";
-import { icon } from "../WeaponList/WeaponList";
+import { useListCharacters } from "../../common/hooks/useListCharacters";
+import { ErrorIcon } from "../WeaponList/WeaponList";
 import { Link } from "react-router-dom";
 import commonstyles from "../../common/Styles.module.scss";
 import styles from "./CharList.module.scss";
+import { Character } from "../../common/Types";
 
 const CharImage = ({ char }: { char: Character }) => {
   const [error, setError] = useState<Boolean>();
@@ -26,14 +27,12 @@ const CharImage = ({ char }: { char: Character }) => {
       className={styles["char-img"]}
     ></img>
   ) : (
-    icon
+    ErrorIcon
   );
 };
 
 const CharList = () => {
   const { data } = useListCharacters();
-  console.log(data);
-
   const [element, setElement] = useState<string>();
 
   return (

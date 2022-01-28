@@ -1,11 +1,23 @@
-.weapon-btn {
-  width: 10em;
-  height: 3em;
-  background: transparent;
-  border: 4px solid #2f365f;
-  border-radius: 8px;
-}
+.home-main {
+  display: flex;
+  justify-content: space-between;
 
-.weapon-btn:hover {
-  border: 4px solid #1f2546;
+  .weapon-btn {
+    width: 10em;
+    height: 3em;
+    background: transparent;
+    border: 4px solid #2f365f;
+    border-radius: 8px;
+  }
+
+  .weapon-btn:hover {
+    border: 4px solid #1f2546;
+  }
+
+  .home-img {
+    width: 618px;
+    height: 830px;
+    filter: drop-shadow(15px 3px 10px rgba(0, 0, 0, 0.25));
+    padding-right: 8em;
+  }
 }

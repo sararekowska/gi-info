@@ -1,12 +1,17 @@
 import { useState } from "react";
-import { useListWeapons, Weapon } from "../../hooks/useListWeapons";
+import { useListWeapons } from "../../common/hooks/useListWeapons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import {
+  faTimesCircle,
+  faArrowCircleLeft,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import commonstyles from "../../common/Styles.module.scss";
 import styles from "./WeaponList.module.scss";
+import { Weapon } from "../../common/Types";
 
-export const icon = <FontAwesomeIcon icon={faTimesCircle} />;
+export const ErrorIcon = <FontAwesomeIcon icon={faTimesCircle} />;
+export const BackIcon = <FontAwesomeIcon icon={faArrowCircleLeft} />;
 
 const WeaponImage = ({ weapon }: { weapon: Weapon }) => {
   const [error, setError] = useState<Boolean>();
@@ -27,13 +32,12 @@ const WeaponImage = ({ weapon }: { weapon: Weapon }) => {
       className={styles["weapon-img"]}
     ></img>
   ) : (
-    icon
+    ErrorIcon
   );
 };
 
 const WeaponList = () => {
   const { data } = useListWeapons();
-  // console.log(data);
 
   const [type, setType] = useState<string>();
 
