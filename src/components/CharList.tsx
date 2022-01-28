@@ -36,7 +36,7 @@ const CharList = () => {
   return (
     <>
       <main>
-        <div className="buttons">
+        <div className="select-btn">
           {["Pyro", "Electro", "Anemo", "Cryo", "Hydro", "Geo"].map((el) => (
             <button onClick={() => setElement(el)}>{el}</button>
           ))}

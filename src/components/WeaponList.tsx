@@ -37,7 +37,7 @@ const WeaponList = () => {
   return (
     <>
       <main>
-        <div className="buttons">
+        <div className="select-btn">
           {["Catalyst", "Bow", "Sword", "Polearm", "Claymore"].map((type) => (
             <button onClick={() => setType(type)}>{type}</button>
           ))}
