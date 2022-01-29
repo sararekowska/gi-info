@@ -33,6 +33,7 @@ const CharImage = ({ char }: { char: Character }) => {
 
 const CharList = () => {
   const { data } = useListCharacters();
+  console.log(data);
   const [element, setElement] = useState<string>();
 
   return (

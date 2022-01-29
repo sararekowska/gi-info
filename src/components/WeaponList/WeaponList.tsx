@@ -31,7 +31,7 @@ const WeaponImage = ({ weapon }: { weapon: Weapon }) => {
 
 const WeaponList = () => {
   const { data } = useListWeapons();
-
+  // console.log(data);
   const [type, setType] = useState<string>();
 
   return (
