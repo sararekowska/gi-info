@@ -7,7 +7,7 @@ import { Character } from "../../common/Types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { sub } from "../../common/utils";
 
-const CharImage = ({ char }: { char: Character }) => {
+export const CharImage = (props: { char: Character; img: string }) => {
   const [error, setError] = useState<Boolean>();
 
   return !error ? (
@@ -15,11 +15,11 @@ const CharImage = ({ char }: { char: Character }) => {
       src={
         "https://api.genshin.dev/characters/" +
         sub(
-          char.name.replaceAll(" ", "-"),
+          props.char.name.replaceAll(" ", "-"),
           ["sangonomiya-", "kamisato-", "kaedehara-", "-shogun", "kujou-"],
           ""
         ) +
-        "/icon-big"
+        props.img
       }
       onError={() => setError(true)}
       className={styles["char-img"]}
@@ -61,7 +61,7 @@ const CharList = () => {
                 <div className={styles["list-item"]}>
                   <p>{char.name}</p>
                   <br />
-                  <CharImage char={char} />
+                  <CharImage char={char} img={"/icon-big"} />
                 </div>
               </Link>
             ))}

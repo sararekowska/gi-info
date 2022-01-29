@@ -27,8 +27,8 @@ ReactDOM.render(
       <BrowserRouter>
         <Switch>
           <Route path="/" component={Home} exact />
-          <Route path="/char-list" component={CharList} />
-          <Route path="/weapon-list" component={WeaponList} />
+          <Route path="/char-list" component={CharList} exact />
+          <Route path="/weapon-list" component={WeaponList} exact />
           <Route path="/weapon/:name" component={WeaponPage} />
           <Route path="/character/:name" component={CharPage} />
           <Route path="*" component={ErrorPage} />

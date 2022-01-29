@@ -3,7 +3,7 @@ import { Weapon } from "../Types";
 import { sub } from "../utils";
 
 export const useWeapon = (name: string) => {
-  const query = useQuery<Weapon[]>(["weapon", name], async () => {
+  const query = useQuery<Weapon>(["weapon", name], async () => {
     const res = await fetch(
       "https://api.genshin.dev/weapons/" + sub(name, ["'", " ", "--"], "-")
     );
