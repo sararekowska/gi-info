@@ -6,7 +6,7 @@ import { useCharacter } from "../../common/hooks/useCharacter";
 const CharPage = () => {
   const { name } = useParams<{ name: string }>();
   const { data } = useCharacter(name);
-  console.log(data);
+
   return (
     <>
       <Link to="/char-list">
@@ -17,6 +17,7 @@ const CharPage = () => {
           className={commonstyles["back-icon"]}
         />
       </Link>
+      <main></main>
     </>
   );
 };

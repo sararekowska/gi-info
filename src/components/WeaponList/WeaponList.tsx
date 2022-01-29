@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import commonstyles from "../../common/Styles.module.scss";
 import styles from "./WeaponList.module.scss";
 import { Weapon } from "../../common/Types";
+import { sub } from "../../common/utils";
 
 const WeaponImage = ({ weapon }: { weapon: Weapon }) => {
   const [error, setError] = useState<Boolean>();
@@ -13,12 +14,7 @@ const WeaponImage = ({ weapon }: { weapon: Weapon }) => {
     <img
       src={
         "https://api.genshin.dev/weapons/" +
-        weapon.name
-          .toLowerCase()
-          .replace(" ", "-")
-          .replace("'", "-")
-          .replaceAll(" ", "-")
-          .replace("--", "-") +
+        sub(weapon.name, ["'", " ", "--"], "-") +
         "/icon"
       }
       onError={() => setError(true)}
@@ -31,7 +27,7 @@ const WeaponImage = ({ weapon }: { weapon: Weapon }) => {
 
 const WeaponList = () => {
   const { data } = useListWeapons();
-  // console.log(data);
+
   const [type, setType] = useState<string>();
 
   return (

@@ -12,10 +12,13 @@ import WeaponPage from "./components/WeaponPage/WeaponPage";
 import CharPage from "./components/CharPage/CharPage";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
+import { ReactQueryDevtools } from "react-query/devtools";
 
 library.add(fas);
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: { queries: { staleTime: 1000 * 60 } },
+});
 
 ReactDOM.render(
   <React.StrictMode>
@@ -31,6 +34,7 @@ ReactDOM.render(
           <Route path="*" component={ErrorPage} />
         </Switch>
       </BrowserRouter>
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById("root")

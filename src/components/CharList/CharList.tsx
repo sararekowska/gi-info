@@ -5,6 +5,7 @@ import commonstyles from "../../common/Styles.module.scss";
 import styles from "./CharList.module.scss";
 import { Character } from "../../common/Types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { sub } from "../../common/utils";
 
 const CharImage = ({ char }: { char: Character }) => {
   const [error, setError] = useState<Boolean>();
@@ -13,14 +14,11 @@ const CharImage = ({ char }: { char: Character }) => {
     <img
       src={
         "https://api.genshin.dev/characters/" +
-        char.name
-          .toLowerCase()
-          .replace(" ", "-")
-          .replace("sangonomiya-", "")
-          .replace("kamisato-", "")
-          .replace("kaedehara-", "")
-          .replace("-shogun", "")
-          .replace("kujou-", "") +
+        sub(
+          char.name.replaceAll(" ", "-"),
+          ["sangonomiya-", "kamisato-", "kaedehara-", "-shogun", "kujou-"],
+          ""
+        ) +
         "/icon-big"
       }
       onError={() => setError(true)}
