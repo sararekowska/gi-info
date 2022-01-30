@@ -7,7 +7,7 @@ import styles from "./WeaponList.module.scss";
 import { Weapon } from "../../common/Types";
 import { sub } from "../../common/utils";
 
-const WeaponImage = ({ weapon }: { weapon: Weapon }) => {
+export const WeaponImage = ({ weapon }: { weapon: Weapon }) => {
   const [error, setError] = useState<Boolean>();
 
   return !error ? (

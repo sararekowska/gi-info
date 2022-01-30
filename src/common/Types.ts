@@ -3,6 +3,8 @@ export type Weapon = {
   type: string;
   baseAttack: number;
   rarity: number;
+  passiveDesc: string;
+  location: string;
 };
 
 export type Character = {
