@@ -6,6 +6,7 @@ import styles from "./CharList.module.scss";
 import { Character } from "../../common/Types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { sub } from "../../common/utils";
+import { BackButton } from "../UI/BackButton";
 
 export const CharImage = (props: { char: Character; img: string }) => {
   const [error, setError] = useState<Boolean>();
@@ -36,14 +37,7 @@ const CharList = () => {
 
   return (
     <>
-      <Link to="/">
-        <FontAwesomeIcon
-          icon={["fas", "arrow-circle-left"]}
-          color="white"
-          size="5x"
-          className={commonstyles["back-icon"]}
-        />
-      </Link>
+      <BackButton />
       <main>
         <section className={commonstyles["select-btn"]}>
           {["Pyro", "Electro", "Anemo", "Cryo", "Hydro", "Geo"].map((el) => (

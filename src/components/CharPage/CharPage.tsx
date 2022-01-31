@@ -1,23 +1,15 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link, useParams } from "react-router-dom";
-import commonstyles from "../../common/Styles.module.scss";
+import { useParams } from "react-router-dom";
 import { useCharacter } from "../../common/hooks/useCharacter";
 import { CharImage } from "../CharList/CharList";
 import styles from "./CharPage.module.scss";
+import { BackButton } from "../UI/BackButton";
 
 const CharPage = () => {
   const { name } = useParams<{ name: string }>();
   const { data } = useCharacter(name);
   return data ? (
     <>
-      <Link to="/char-list">
-        <FontAwesomeIcon
-          icon={["fas", "arrow-circle-left"]}
-          color="white"
-          size="5x"
-          className={commonstyles["back-icon"]}
-        />
-      </Link>
+      <BackButton />
       <main className={styles["main-char"]}>
         <section className={styles["left-desc"]}>
           <p>{data.name}</p>

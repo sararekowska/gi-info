@@ -6,6 +6,7 @@ import commonstyles from "../../common/Styles.module.scss";
 import styles from "./WeaponList.module.scss";
 import { Weapon } from "../../common/Types";
 import { sub } from "../../common/utils";
+import { BackButton } from "../UI/BackButton";
 
 export const WeaponImage = ({ weapon }: { weapon: Weapon }) => {
   const [error, setError] = useState<Boolean>();
@@ -32,14 +33,7 @@ const WeaponList = () => {
 
   return (
     <>
-      <Link to="/">
-        <FontAwesomeIcon
-          icon={["fas", "arrow-circle-left"]}
-          color="white"
-          size="5x"
-          className={commonstyles["back-icon"]}
-        />
-      </Link>
+      <BackButton />
       <main>
         <section className={commonstyles["select-btn"]}>
           {["Catalyst", "Bow", "Sword", "Polearm", "Claymore"].map((type) => (

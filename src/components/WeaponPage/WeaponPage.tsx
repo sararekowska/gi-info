@@ -1,7 +1,6 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useWeapon } from "../../common/hooks/useWeapon";
-import commonstyles from "../../common/Styles.module.scss";
+import { BackButton } from "../UI/BackButton";
 import { WeaponImage } from "../WeaponList/WeaponList";
 import styles from "./WeaponPage.module.scss";
 
@@ -11,14 +10,7 @@ const WeaponPage = () => {
   console.log(data);
   return data ? (
     <>
-      <Link to="/weapon-list">
-        <FontAwesomeIcon
-          icon={["fas", "arrow-circle-left"]}
-          color="white"
-          size="5x"
-          className={commonstyles["back-icon"]}
-        />
-      </Link>
+      <BackButton />
       <main className={styles["main-weapon"]}>
         <section className={styles["left-desc"]}>
           <p>{data.name}</p>
