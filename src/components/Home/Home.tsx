@@ -24,7 +24,7 @@ const HomePage = () => {
             </button>
           </Link>
         </div>
-        <img alt="paimon" src={img} className={styles["home-img"]} />
+        <img alt="paimon" src={img} className={commonstyles["home-img"]} />
       </main>
     </>
   );
