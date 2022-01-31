@@ -6,5 +6,8 @@ export const useListCharacters = () => {
     const res = await fetch("https://api.genshin.dev/characters/all");
     return res.json();
   });
-  return query;
+  return {
+    ...query,
+    data: query.data?.filter((character) => character.name != "Traveler"),
+  };
 };
