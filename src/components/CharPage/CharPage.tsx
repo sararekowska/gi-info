@@ -18,20 +18,20 @@ const CharPage = () => {
           className={commonstyles["back-icon"]}
         />
       </Link>
-      <div className={styles["main-char"]}>
-        <div className={styles["left-desc"]}>
+      <main className={styles["main-char"]}>
+        <section className={styles["left-desc"]}>
           <p>{data.name}</p>
           <CharImage char={data} img="/portrait" />
-        </div>
+        </section>
 
-        <div className={styles["right-desc"]}>
+        <section className={styles["right-desc"]}>
           <p>Vision: {data.vision}</p>
           <p>Rarity: {data.rarity}</p>
           <p>Nation: {data.nation}</p>
           <p>Weapon: {data.weapon}</p>
           <p>{data.description}</p>
-        </div>
-      </div>
+        </section>
+      </main>
     </>
   ) : null;
 };

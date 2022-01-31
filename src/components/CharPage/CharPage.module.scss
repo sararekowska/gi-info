@@ -5,8 +5,9 @@
   flex-direction: row;
 
   .left-desc {
-    width: 400px;
+    width: 25em;
     p {
+      width: max-content;
       color: #f7f1ed;
       font-size: 250%;
       font-weight: 600;
@@ -26,7 +27,7 @@
   .right-desc {
     padding-left: 2em;
     color: #f7f1ed;
-    padding-top: 7%;
+    padding-top: 5em;
   }
 
   .right-desc > * {

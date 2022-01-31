@@ -45,15 +45,15 @@ const CharList = () => {
         />
       </Link>
       <main>
-        <div className={commonstyles["select-btn"]}>
+        <section className={commonstyles["select-btn"]}>
           {["Pyro", "Electro", "Anemo", "Cryo", "Hydro", "Geo"].map((el) => (
             <button onClick={() => setElement(el)}>{el}</button>
           ))}
 
           <button onClick={() => setElement("")}>CLEAR</button>
-        </div>
+        </section>
 
-        <div className={commonstyles["content-list"]}>
+        <section className={commonstyles["content-list"]}>
           {data
             ?.filter((char) => !element || char.vision === element)
             .map((char) => (
@@ -65,7 +65,7 @@ const CharList = () => {
                 </div>
               </Link>
             ))}
-        </div>
+        </section>
       </main>
     </>
   );

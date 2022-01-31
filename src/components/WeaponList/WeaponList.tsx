@@ -41,27 +41,27 @@ const WeaponList = () => {
         />
       </Link>
       <main>
-        <div className={commonstyles["select-btn"]}>
+        <section className={commonstyles["select-btn"]}>
           {["Catalyst", "Bow", "Sword", "Polearm", "Claymore"].map((type) => (
             <button onClick={() => setType(type)}>{type}</button>
           ))}
 
           <button onClick={() => setType("")}>ALL</button>
-        </div>
+        </section>
 
-        <div className={commonstyles["content-list"]}>
+        <section className={commonstyles["content-list"]}>
           {data
             ?.filter((weapon) => !type || weapon.type === type)
             .map((weapon) => (
               <Link to={"/weapon/" + weapon.name}>
-                <div className={styles["list-item-weapon"]}>
+                <section className={styles["list-item-weapon"]}>
                   <p>{weapon.name}</p>
                   <br />
                   <WeaponImage weapon={weapon} />
-                </div>
+                </section>
               </Link>
             ))}
-        </div>
+        </section>
       </main>
     </>
   );

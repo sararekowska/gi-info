@@ -7,7 +7,7 @@ const ErrorPage = () => {
   return (
     <>
       <main className={styles["error-main"]}>
-        <div className={commonstyles["main-home-error"]}>
+        <section className={commonstyles["main-home-error"]}>
           <p className={commonstyles["home-error-p"]}>
             Sorry, the page probably got lost during the research.
           </p>
@@ -16,7 +16,7 @@ const ErrorPage = () => {
               Home Page
             </button>
           </Link>
-        </div>
+        </section>
         <img src={img} className={styles["error-img"]} />
       </main>
     </>
