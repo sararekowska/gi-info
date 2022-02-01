@@ -32,7 +32,6 @@ export const CharImage = (props: { char: Character; img: string }) => {
 
 const CharList = () => {
   const { data } = useListCharacters();
-  console.log(data);
   const [element, setElement] = useState<string>();
 
   return (
@@ -41,7 +40,9 @@ const CharList = () => {
       <main>
         <section className={commonstyles["select-btn"]}>
           {["Pyro", "Electro", "Anemo", "Cryo", "Hydro", "Geo"].map((el) => (
-            <button onClick={() => setElement(el)}>{el}</button>
+            <button key={el} onClick={() => setElement(el)}>
+              {el}
+            </button>
           ))}
 
           <button onClick={() => setElement("")}>CLEAR</button>
@@ -51,12 +52,12 @@ const CharList = () => {
           {data
             ?.filter((char) => !element || char.vision === element)
             .map((char) => (
-              <Link to={"/character/" + char.name}>
-                <div className={styles["list-item"]}>
+              <Link key={char.name} to={"/character/" + char.name}>
+                <section className={styles["list-item"]}>
                   <p>{char.name}</p>
                   <br />
                   <CharImage char={char} img={"/icon-big"} />
-                </div>
+                </section>
               </Link>
             ))}
         </section>
