@@ -2,7 +2,7 @@
   "name": "genshin-info",
   "version": "0.1.0",
   "private": false,
-  "homepage": "http://sararekowska.github.io/massloop-task",
+  "homepage": "http://sararekowska.github.io/gi-info",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
