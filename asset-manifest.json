@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/massloop-task/static/css/main.f5c0f27a.css",
+    "main.js": "/massloop-task/static/js/main.f292c86c.js",
+    "static/media/paimon.png": "/massloop-task/static/media/paimon.3838537e64a09ba40886.png",
+    "static/media/sucrose.png": "/massloop-task/static/media/sucrose.00d521993cf68e87dfb0.png",
+    "static/media/logo.png": "/massloop-task/static/media/logo.18c612ab261eca117661.png",
+    "index.html": "/massloop-task/index.html",
+    "main.f5c0f27a.css.map": "/massloop-task/static/css/main.f5c0f27a.css.map",
+    "main.f292c86c.js.map": "/massloop-task/static/js/main.f292c86c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f5c0f27a.css",
+    "static/js/main.f292c86c.js"
+  ]
+}
