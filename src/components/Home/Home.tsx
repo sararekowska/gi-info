@@ -12,13 +12,13 @@ const HomePage = () => {
             Get info about Genshin Impact characters and weapons.
           </p>
 
-          <Link to="/char-list">
+          <Link to="/gi-info/char-list">
             <button type="button" className={commonstyles["char-btn"]}>
               View Characters
             </button>
           </Link>
 
-          <Link to="/weapon-list">
+          <Link to="/gi-info/weapon-list">
             <button type="button" className={styles["weapon-btn"]}>
               View weapons
             </button>

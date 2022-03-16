@@ -49,7 +49,7 @@ const WeaponList = () => {
           {data
             ?.filter((weapon) => !type || weapon.type === type)
             .map((weapon) => (
-              <Link key={weapon.name} to={"/weapon/" + weapon.name}>
+              <Link key={weapon.name} to={"/gi-info/weapon/" + weapon.name}>
                 <section className={styles["list-item-weapon"]}>
                   <p>{weapon.name}</p>
                   <br />

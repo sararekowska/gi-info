@@ -52,7 +52,7 @@ const CharList = () => {
           {data
             ?.filter((char) => !element || char.vision === element)
             .map((char) => (
-              <Link key={char.name} to={"/character/" + char.name}>
+              <Link key={char.name} to={"/gi-info/character/" + char.name}>
                 <section className={styles["list-item"]}>
                   <p>{char.name}</p>
                   <br />

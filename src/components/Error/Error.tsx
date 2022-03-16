@@ -11,7 +11,7 @@ const ErrorPage = () => {
           <p className={commonstyles["home-error-p"]}>
             Sorry, the page probably got lost during the research.
           </p>
-          <Link to="/">
+          <Link to="/gi-info">
             <button type="button" className={commonstyles["char-btn"]}>
               Home Page
             </button>

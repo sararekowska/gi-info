@@ -26,11 +26,11 @@ ReactDOM.render(
       <Header />
       <BrowserRouter>
         <Switch>
-          <Route path="/" component={Home} exact />
-          <Route path="/char-list" component={CharList} exact />
-          <Route path="/weapon-list" component={WeaponList} exact />
-          <Route path="/weapon/:name" component={WeaponPage} />
-          <Route path="/character/:name" component={CharPage} />
+          <Route path="/gi-info" component={Home} exact />
+          <Route path="/gi-info/char-list" component={CharList} exact />
+          <Route path="/gi-info/weapon-list" component={WeaponList} exact />
+          <Route path="/gi-info/weapon/:name" component={WeaponPage} />
+          <Route path="/gi-info/character/:name" component={CharPage} />
           <Route path="*" component={ErrorPage} />
         </Switch>
       </BrowserRouter>
