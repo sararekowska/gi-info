@@ -8,6 +8,6 @@ export const useListCharacters = () => {
   });
   return {
     ...query,
-    data: query.data?.filter((character) => character.name != "Traveler"),
+    data: query.data?.filter((character) => character.name !== "Traveler"),
   };
 };

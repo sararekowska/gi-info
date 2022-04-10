@@ -20,6 +20,7 @@ export const WeaponImage = ({ weapon }: { weapon: Weapon }) => {
       }
       onError={() => setError(true)}
       className={styles["weapon-img"]}
+      alt="weapon"
     ></img>
   ) : (
     <FontAwesomeIcon icon={["fas", "times-circle"]} />

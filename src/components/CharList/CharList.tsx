@@ -24,6 +24,7 @@ export const CharImage = (props: { char: Character; img: string }) => {
       }
       onError={() => setError(true)}
       className={styles["char-img"]}
+      alt="character"
     ></img>
   ) : (
     <FontAwesomeIcon icon={["fas", "times-circle"]} />

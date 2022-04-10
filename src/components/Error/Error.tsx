@@ -17,7 +17,7 @@ const ErrorPage = () => {
             </button>
           </Link>
         </section>
-        <img src={img} className={styles["error-img"]} />
+        <img src={img} className={styles["error-img"]} alt="error imageA" />
       </main>
     </>
   );
